@@ -1,70 +1,95 @@
-# Getting Started with Create React App
+# genoxplain
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+GenoXplain is a web application designed for the interpretable analysis of genetic variants and their impact on cancer signaling pathways. Users can upload their genetic variant data (e.g., VCF files) or paste variants directly to receive insights into how these variations may affect cancer-related biological processes. This tool aims to bridge the gap between raw genetic data and actionable understanding for researchers and clinicians in the field of oncology.
+
+Built with [Next.js](https://nextjs.org/), [React](https://react.dev/), [Tailwind CSS](https://tailwindcss.com/), and leveraging AI capabilities via AWS Bedrock, GenoXplain provides a user-friendly interface for complex bioinformatics analysis.
+
+## Prerequisites
+
+Before you begin, ensure you have the following installed:
+*   [Node.js](https://nodejs.org/) (version 20.x or higher recommended)
+*   [npm](https://www.npmjs.com/) (usually comes with Node.js) or [yarn](https://yarnpkg.com/) or [pnpm](https://pnpm.io/)
+
+## Getting Started
+
+1.  **Clone the repository (if you haven't already):**
+    ```bash
+    git clone <your-repository-url>
+    cd genoxplain
+    ```
+
+2.  **Install dependencies:**
+    Choose your preferred package manager:
+    ```bash
+    npm install
+    # or
+    yarn install
+    # or
+    pnpm install
+    ```
+
+3.  **Run the development server:**
+    ```bash
+    npm run dev
+    # or
+    yarn dev
+    # or
+    pnpm dev
+    ```
+    This will start the development server, typically on [http://localhost:3000](http://localhost:3000). The app will use Turbopack for faster development builds.
+
+Open [http://localhost:3000](http://localhost:3000) in your browser to see the result. You can start editing the page by modifying files in the `src/` directory. The page auto-updates as you edit the files.
 
 ## Available Scripts
 
-In the project directory, you can run:
+In the project directory, you can run the following scripts:
 
-### `npm start`
+*   `npm run dev`: Runs the app in development mode with Turbopack.
+*   `npm run build`: Builds the app for production.
+*   `npm run start`: Starts the production server (after running `npm run build`).
+*   `npm run lint`: Lints the codebase using Next.js's ESLint configuration.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+(If you use `yarn` or `pnpm`, replace `npm run` with `yarn` or `pnpm run` respectively.)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Key Technologies & Libraries
 
-### `npm test`
+This project utilizes several modern web technologies, including:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+*   **Framework:** [Next.js](https://nextjs.org/) (v15)
+*   **UI Library:** [React](https://react.dev/) (v19)
+*   **Styling:** [Tailwind CSS](https://tailwindcss.com/) (v4)
+*   **UI Components:** [Shadcn UI](https://ui.shadcn.com/) (implied by `lucide-react`, `@radix-ui/*`, `tailwind-merge`, `clsx`, `cmdk`, `vaul`)
+*   **Markdown:** `react-markdown` for rendering Markdown content.
+*   **3D Molecular Visualization:** `ngl` (likely for displaying molecular structures if this is a scientific application)
+*   **AWS Integration:** `@aws-sdk/client-bedrock-runtime` (suggests integration with AWS Bedrock for generative AI features)
+*   **Linting & Formatting:** ESLint, Prettier (implied by standard Next.js setup and `eslint-config-next`)
+*   **TypeScript:** For static typing.
 
-### `npm run build`
+## Project Structure
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+A brief overview of the main directories:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+*   `src/app/`: Contains the core application routes and pages.
+*   `src/components/`: For reusable UI components.
+*   `src/lib/`: For utility functions and helper modules.
+*   `public/`: For static assets like images and fonts.
+*   `components.json`: Configuration for Shadcn UI.
 
 ## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+To learn more about the technologies used, refer to their official documentation:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+*   [Next.js Documentation](https://nextjs.org/docs)
+*   [React Documentation](https://react.dev/learn)
+*   [Tailwind CSS Documentation](https://tailwindcss.com/docs)
+*   [Shadcn UI Documentation](https://ui.shadcn.com/docs)
 
-### Code Splitting
+## Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-### Analyzing the Bundle Size
+Check out the [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+---
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This README was generated to provide a starting point. Feel free to customize it further to better suit your project!
